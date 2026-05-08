@@ -1,0 +1,41 @@
+/* index.css */
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent !important;
+    overflow: hidden;
+}
+
+.player {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: fixed;
+    will-change: transform, left, top;
+    /* 念のため、他の要素との重なりをリセット */
+    contain: strict;
+    z-index: 999;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* 0 ではなく 0.01 などの微細な値を指定すると描画が安定することがあります */
+    background-color: rgba(0, 0, 0, 0.01) !important;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+@keyframes flicker {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.999;
+    }
+}
