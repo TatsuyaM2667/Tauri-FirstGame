@@ -6,7 +6,7 @@ function App() {
   const requestRef = useRef<number | null>(null);
   const keysPressed = useRef<{ [key: string]: boolean }>({});
 
-  const SPEED = 6; // 少し速めに設定
+  const SPEED = 6; 
 
   const update = () => {
     setPos((prev) => {
