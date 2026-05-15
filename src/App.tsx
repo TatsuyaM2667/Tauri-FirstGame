@@ -17,12 +17,10 @@ function App() {
       if (keysPressed.current["ArrowDown"]) newY += SPEED;
       if (keysPressed.current["ArrowLeft"]) newX -= SPEED;
       if (keysPressed.current["ArrowRight"]) newX += SPEED;
-
-      // 画面端の判定
+      
       const x = Math.max(0, Math.min(window.innerWidth - 50, newX));
       const y = Math.max(0, Math.min(window.innerHeight - 50, newY));
-
-      // 座標が変わっていないならステート更新をスキップ（負荷軽減）
+      
       if (x === prev.x && y === prev.y) return prev;
       return { x, y };
     });
@@ -62,9 +60,7 @@ function App() {
         width: "50px",
         height: "50px",
         backgroundColor: "red",
-        // left/topではなく、transformを使用（残像対策）
-        transform: `translate3d(${pos.x}px, ${pos.y}px, 0)`,
-        // 矢印キー操作の反応を良くするため、transitionは絶対に切る
+      　transform: `translate3d(${pos.x}px, ${pos.y}px, 0)`,
         transition: "none",
         willChange: "transform",
       }}
