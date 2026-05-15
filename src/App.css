@@ -16,7 +16,6 @@ body,
     background-color: red;
     position: fixed;
     will-change: transform, left, top;
-    /* 念のため、他の要素との重なりをリセット */
     contain: strict;
     z-index: 999;
 }
@@ -24,7 +23,6 @@ body,
 body {
     margin: 0;
     padding: 0;
-    /* 0 ではなく 0.01 などの微細な値を指定すると描画が安定することがあります */
     background-color: rgba(0, 0, 0, 0.01) !important;
     overflow: hidden;
     width: 100vw;
